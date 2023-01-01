@@ -1,2 +1,2 @@
-<h1>Yolo</h1>
+<h1><a href="/">Yolo</a></h1>
 <slot></slot>

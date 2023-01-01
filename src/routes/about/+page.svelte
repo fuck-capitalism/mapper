@@ -3,13 +3,33 @@
   export let data;
 </script>
 
-The IP is {data.ip}
+<div class="user">The IP is {data.ip}</div>
 
 {#each data.users as user}
-  <div>Email: {user.email}</div>
-  <div>Name: {user.name}</div>
-	Posts:
+  <div class="user">
+    <div><b>Name:</b> {user.name}</div>
+    <div><b>Email:</b> {user.email}</div>
+  </div>
+  Posts:
   {#each user.posts as post}
-    <div>Title: {post.title}</div>
+    <div class="post">
+      <div><b>Title:</b> {post.title}</div>
+      <div><b>Published:</b> {post.published}</div>
+    </div>
   {/each}
+  <hr />
 {/each}
+
+<style>
+  .user,
+  .post {
+    margin-bottom: 5px;
+  }
+  .post {
+    margin-left: 10px;
+  }
+  hr {
+    width: 100px;
+    margin-left: 0;
+  }
+</style>
